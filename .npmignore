@@ -2,3 +2,5 @@
 /.git*
 /.travis*
 /gulpfile.js
+/monitorCtrlC.js
+/test.js
