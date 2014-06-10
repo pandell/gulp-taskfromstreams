@@ -48,21 +48,30 @@ TO DO
 _Type_: Object  
 _Default_: no options
 
-TO DO
+Options that customize behaviour of `taskFromStreams` function.
 
 #### options.beepOnError
 
 _Type_: Boolean  
 _Default_: use global setting
 
-TO DO
+When truthy, every time `taskFromStreams` function detects a stream error, it will play system _"beep"_ sound. This audible feedback is useful (for example) when running a watch task whose window is hidden behind other windows.
+
+If not specified, global setting will be used. If an environment variable `GULP_BEEPONERROR` is defined and has truthy value, system _"beep"_ sound will be played, no sound will be played otherwise.
+
+#### options.streamsProvider
+
+_Type_: Function  
+_Default_: use `streamsProvider` parameter
+
+Alternative way of passing `streamsProvider` function to `taskFromStreams`. If both `streamsProvider` parameter and `options.streamsProvider` are specified, parameter will be used.
 
 #### streamsProvider
 
 _Type_: Function  
 _Default_: no default, required
 
-TO DO
+A function that will be called to determine streams that make up the task. Must return non-empty array. Each item in the array must be a valid stream. All the streams will be piped together (e.g. if an array `[s1, s2, s3,..., sN]` is returned, equivalent of `s1.pipe(s2).pipe(s3). ... .pipe(sN)` will be performed).
 
 
 ## Contributing
