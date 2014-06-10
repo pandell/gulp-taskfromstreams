@@ -6,6 +6,8 @@
 
 [Changelog](https://github.com/pandell/gulp-taskfromstreams/releases)
 
+Defines a utility function that can be used to wrap a sequence of gulp steps to ensure that any error will result in a task failure and not a hang or a crash.
+
 
 ## Install
 
@@ -41,7 +43,7 @@ var taskFromStreams = require('gulp-taskfromstreams');
 
 ### `taskFromStreams([options], streamsProvider)`
 
-TO DO
+Takes a function that generates an array of streams (`streamsProvider`) and produces an orchestrator-compatible task function. Each stream in the resulting array is piped into the next while any errors in any stream will result in a failed task.
 
 #### options
 
