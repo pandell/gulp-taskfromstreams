@@ -1,0 +1,4 @@
+/.editor*
+/.git*
+/.travis*
+/gulpfile.js
