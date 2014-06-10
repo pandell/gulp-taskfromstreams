@@ -41,7 +41,7 @@ describe("taskFromStreams", function () {
         });
     });
 
-    it("rejects invalid streams provider streams", function (cb) {
+    it("rejects invalid streams", function (cb) {
         var task = taskFromStreams({ beepOnError: false }, function () { return [1]; });
         assert.strictEqual("function", typeof task);
 
