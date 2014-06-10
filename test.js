@@ -20,7 +20,7 @@ describe("taskFromStreams", function () {
     });
 
     it("catches streams provider errors", function (cb) {
-        var task = taskFromStreams(function () { throw new Error("Streams provider error"); });
+        var task = taskFromStreams({ beepOnError: false }, function () { throw new Error("Streams provider error"); });
         assert.strictEqual("function", typeof task);
 
         task(function (err) {
@@ -31,7 +31,7 @@ describe("taskFromStreams", function () {
     });
 
     given.async(undefined, null, {}, [[]]).it("rejects invalid streams provider results", function (cb, o) {
-        var task = taskFromStreams(function () { return o; });
+        var task = taskFromStreams({ beepOnError: false }, function () { return o; });
         assert.strictEqual("function", typeof task);
 
         task(function (err) {
@@ -42,7 +42,7 @@ describe("taskFromStreams", function () {
     });
 
     it("rejects invalid streams provider streams", function (cb) {
-        var task = taskFromStreams(function () { return [1]; });
+        var task = taskFromStreams({ beepOnError: false }, function () { return [1]; });
         assert.strictEqual("function", typeof task);
 
         task(function (err) {

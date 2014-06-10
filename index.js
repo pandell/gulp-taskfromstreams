@@ -2,12 +2,24 @@
 
 "use strict";
 
-var beepOnError = !!process.env.GULP_BEEPONERROR;
+var globalBeepOnError = !!process.env.GULP_BEEPONERROR;
 
-module.exports = function streamsAsTask(streamsProvider) {
+module.exports = function streamsAsTask(options, streamsProvider) {
+    if (streamsProvider === undefined) {
+        streamsProvider = options;
+        options = undefined;
+    }
+
+    if (options && typeof streamsProvider !== "function") {
+        streamsProvider = options.streamsProvider;
+    }
     if (typeof streamsProvider !== "function") {
         throw new Error("Streams provider is required");
     }
+
+    var beepOnError = (options && options.hasOwnProperty("beepOnError")
+        ? options.beepOnError
+        : globalBeepOnError);
 
     return function streamsAsTaskRun(cb) {
         // define error/success handlers
