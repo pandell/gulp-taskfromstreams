@@ -4,7 +4,7 @@
 
 var globalBeepOnError = !!process.env.GULP_BEEPONERROR;
 
-module.exports = function streamsAsTask(options, streamsProvider) {
+module.exports = function taskFromStreams(options, streamsProvider) {
     if (streamsProvider === undefined) {
         streamsProvider = options;
         options = undefined;
@@ -21,7 +21,7 @@ module.exports = function streamsAsTask(options, streamsProvider) {
         ? options.beepOnError
         : globalBeepOnError);
 
-    return function streamsAsTaskRun(cb) {
+    return function taskFromStreamsRun(cb) {
         // define error/success handlers
         var failed = false;
         function onError(err) {
