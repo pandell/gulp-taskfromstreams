@@ -1,0 +1,46 @@
+{
+  "name": "gulp-taskfromstreams",
+  "version": "0.0.1",
+  "description": "Forward stream errors to a task",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "pandell/gulp-taskfromstreams",
+  "author": {
+    "name": "Pandell Technology",
+    "url": "http://pandell.com/"
+  },
+  "contributors": [
+    {
+      "name": "Milan Gardian",
+      "url": "https://github.com/milang"
+    }
+  ],
+  "keywords": [
+    "gulp",
+    "gulpplugin",
+    "orchestrator",
+    "stream",
+    "error"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "lint": "gulp lint",
+    "start": "gulp watch",
+    "test": "gulp test"
+  },
+  "bugs": {
+    "url": "https://github.com/pandell/gulp-taskfromstreams/issues"
+  },
+  "homepage": "https://github.com/pandell/gulp-taskfromstreams",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "concat-stream": "^1.4",
+    "gulp": "^3.8",
+    "gulp-jslint-simple": "^0.0",
+    "gulp-mocha": "^0.4",
+    "mocha": "^1.20",
+    "mocha-testdata": "^0.1"
+  }
+}
