@@ -1,12 +1,12 @@
-/*jslint node: true, vars: true, unparam: true */
+/*jslint node: true, vars: true */
 
 "use strict";
 
 var gulp = require("gulp");
 var jslint = require("gulp-jslint-simple");
 var mocha = require("gulp-mocha");
+var monitorCtrlC = require("monitorctrlc");
 
-var monitorCtrlC = require("./monitorCtrlC");
 var taskFromStreams = require("./");
 
 var rootFiles = "*.js*";

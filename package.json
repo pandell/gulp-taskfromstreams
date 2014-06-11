@@ -16,7 +16,6 @@
     }
   ],
   "keywords": [
-    "gulp",
     "gulpplugin",
     "orchestrator",
     "stream",
@@ -38,9 +37,10 @@
   "devDependencies": {
     "concat-stream": "^1.4",
     "gulp": "^3.8",
-    "gulp-jslint-simple": "^0.0",
+    "gulp-jslint-simple": "^0.1",
     "gulp-mocha": "^0.4",
     "mocha": "^1.20",
-    "mocha-testdata": "^0.1"
+    "mocha-testdata": "^0.1",
+    "monitorctrlc": "^0.0"
   }
 }
