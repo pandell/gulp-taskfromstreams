@@ -1,6 +1,6 @@
 {
   "name": "gulp-taskfromstreams",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Forward stream errors to a task",
   "license": "MIT",
   "main": "index.js",
@@ -22,7 +22,7 @@
     "error"
   ],
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.8.0"
   },
   "scripts": {
     "lint": "gulp lint",
@@ -37,6 +37,7 @@
   "devDependencies": {
     "concat-stream": "^1.4",
     "gulp": "^3.8",
+    "gulp-jshint": "^1.6",
     "gulp-jslint-simple": "^0.1",
     "gulp-mocha": "^0.4",
     "mocha": "^1.20",
