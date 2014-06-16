@@ -80,12 +80,15 @@ module.exports = function taskFromStreams(options, streamsProvider) {
         }
 
         // terminate stream pipe with a writable "sink";
-        // when sink is done, task succeeded
+        // this is to prevent buffering/back-pressure mechanism
+        // in stream2 from kicking in and blocking task completion
         if (lastStream.readable) {
             var sink = new Sink();
             lastStream.pipe(sink);
             lastStream = sink;
         }
+
+        // when the last stream is done, task is done too
         lastStream.on("finish", onSuccess);
     };
 };
