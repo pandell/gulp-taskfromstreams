@@ -17,7 +17,9 @@ module.exports = function taskFromStreams(options, streamsProvider) {
         throw new Error("Streams provider is required");
     }
 
-    var beepOnError = (options && options.hasOwnProperty("beepOnError") ? options.beepOnError : globalBeepOnError);
+    var beepOnError = (options && options.hasOwnProperty("beepOnError")
+        ? options.beepOnError
+        : globalBeepOnError);
 
     return function taskFromStreamsRun(cb) {
         // define error/success handlers
