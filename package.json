@@ -34,7 +34,11 @@
   },
   "homepage": "https://github.com/pandell/gulp-taskfromstreams",
   "readmeFilename": "README.md",
+  "dependencies": {
+    "readable-stream": "~1.0"
+  },
   "devDependencies": {
+    "chalk": "0.*",
     "concat-stream": "^1.4",
     "gulp": "^3.8",
     "gulp-jshint": "^1.6",
@@ -42,6 +46,7 @@
     "gulp-mocha": "0.*",
     "mocha": "^1.20",
     "mocha-testdata": "0.*",
-    "monitorctrlc": "0.*"
+    "monitorctrlc": "0.*",
+    "through2": "0.*"
   }
 }

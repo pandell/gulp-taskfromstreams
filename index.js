@@ -1,8 +1,24 @@
-/*jslint node: true, vars: true */
+/*jslint node: true, vars: true, unparam: true, nomen: true */
 
 "use strict";
 
+var util = require("util");
+
+var stream = require("readable-stream");
+
 var globalBeepOnError = !!process.env.GULP_BEEPONERROR;
+
+
+function Sink() {
+    stream.Writable.call(this, { objectMode: true });
+}
+
+util.inherits(Sink, stream.Writable);
+
+Sink.prototype._write = function (chunk, enc, cb) {
+    return cb();
+};
+
 
 module.exports = function taskFromStreams(options, streamsProvider) {
     if (streamsProvider === undefined) {
@@ -63,9 +79,16 @@ module.exports = function taskFromStreams(options, streamsProvider) {
             lastStream = stream;
         }
 
-        // when last stream is done, task succeeded
-        if (lastStream) {
-            lastStream.on("finish", onSuccess);
+        // terminate stream pipe with a writable "sink";
+        // this is to prevent buffering/back-pressure mechanism
+        // in stream2 from kicking in and blocking task completion
+        if (lastStream.readable) {
+            var sink = new Sink();
+            lastStream.pipe(sink);
+            lastStream = sink;
         }
+
+        // when the last stream is done, task is done too
+        lastStream.on("finish", onSuccess);
     };
 };

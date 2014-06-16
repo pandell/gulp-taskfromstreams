@@ -1,6 +1,6 @@
 # [gulp](http://gulpjs.com/)-taskfromstreams
 
-[![Build status](https://travis-ci.org/pandell/gulp-taskfromstreams.svg?branch=master)](https://travis-ci.org/pandell/gulp-taskfromstreams) [!["devDependencies" status](https://david-dm.org/pandell/gulp-taskfromstreams/dev-status.svg)](https://david-dm.org/pandell/gulp-taskfromstreams#info=devDependencies)
+[![Build status](https://travis-ci.org/pandell/gulp-taskfromstreams.svg?branch=master)](https://travis-ci.org/pandell/gulp-taskfromstreams) [!["dependencies" status](https://david-dm.org/pandell/gulp-taskfromstreams.svg)](https://david-dm.org/pandell/gulp-taskfromstreams) [!["devDependencies" status](https://david-dm.org/pandell/gulp-taskfromstreams/dev-status.svg)](https://david-dm.org/pandell/gulp-taskfromstreams#info=devDependencies)
 
 > Forward stream errors to a task
 
