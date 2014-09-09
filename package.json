@@ -1,6 +1,6 @@
 {
   "name": "gulp-taskfromstreams",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Forward stream errors to a task",
   "license": "MIT",
   "main": "index.js",
